@@ -5,8 +5,8 @@ from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, Text, UniqueConst
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
-from backend.database import Base
-from backend.models.base import UUIDMixin
+from database import Base
+from models.base import UUIDMixin
 
 
 class WwCompany(UUIDMixin, Base):

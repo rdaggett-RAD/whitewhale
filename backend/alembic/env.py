@@ -6,9 +6,9 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
 
-from backend.config import settings
-from backend.database import Base
-import backend.models  # noqa: F401 — ensure all models are registered
+from config import settings
+from database import Base
+import models  # noqa: F401 — ensure all models are registered
 
 config = context.config
 

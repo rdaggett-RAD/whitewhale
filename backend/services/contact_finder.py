@@ -2,8 +2,8 @@ import uuid
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.models.whale import WwWhaleContact
-from backend.services.apollo_client import apollo_client
+from models.whale import WwWhaleContact
+from services.apollo_client import apollo_client
 
 
 async def find_contacts_for_whale(

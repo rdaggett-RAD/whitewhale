@@ -3,7 +3,7 @@ import uuid
 
 import httpx
 
-from backend.config import settings
+from config import settings
 
 CLAUDE_MODEL = "claude-sonnet-4-20250514"
 

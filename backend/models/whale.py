@@ -5,8 +5,8 @@ from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, Text, text
 from sqlalchemy.dialects.postgresql import ARRAY, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from backend.database import Base
-from backend.models.base import UUIDMixin
+from database import Base
+from models.base import UUIDMixin
 
 
 class WwWhiteWhale(UUIDMixin, Base):

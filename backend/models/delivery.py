@@ -5,8 +5,8 @@ from sqlalchemy import Boolean, DateTime, ForeignKey, Text, Time, text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
-from backend.database import Base
-from backend.models.base import UUIDMixin
+from database import Base
+from models.base import UUIDMixin
 
 
 class WwDeliverySettings(UUIDMixin, Base):

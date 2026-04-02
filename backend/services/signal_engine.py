@@ -5,12 +5,12 @@ from datetime import datetime, timedelta, timezone
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.models.icp import WwIcpConfig, WwServiceCategory
-from backend.models.signal import WwCompany, WwSignal, WwSignalDedup
-from backend.models.whale import WwWhiteWhale
-from backend.services.apollo_client import apollo_client
-from backend.services.classifier import classify_signal, compute_urgency_score
-from backend.services.news_client import newsapi_client, serpapi_client
+from models.icp import WwIcpConfig, WwServiceCategory
+from models.signal import WwCompany, WwSignal, WwSignalDedup
+from models.whale import WwWhiteWhale
+from services.apollo_client import apollo_client
+from services.classifier import classify_signal, compute_urgency_score
+from services.news_client import newsapi_client, serpapi_client
 
 
 def _fingerprint(signal_type: str, company_domain: str, summary: str) -> str:

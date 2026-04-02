@@ -1,21 +1,21 @@
-from backend.models.action import WwActionQueue, WwSequence, WwSequenceEnrollment
-from backend.models.delivery import WwDeliverySettings, WwSentLog
-from backend.models.icp import WwIcpConfig, WwServiceCategory, WwSignalRoutingRule
-from backend.models.linkedin import (
+from models.action import WwActionQueue, WwSequence, WwSequenceEnrollment
+from models.delivery import WwDeliverySettings, WwSentLog
+from models.icp import WwIcpConfig, WwServiceCategory, WwSignalRoutingRule
+from models.linkedin import (
     WwConnectionOpportunity,
     WwLinkedinAccount,
     WwLinkedinConnection,
 )
-from backend.models.prompt import (
+from models.prompt import (
     WwPromptAngle,
     WwPromptConstraint,
     WwPromptPersona,
     WwPromptValueProp,
     WwPromptVoice,
 )
-from backend.models.signal import WwCompany, WwSignal, WwSignalConnection, WwSignalDedup
-from backend.models.tenant import WwTenant, WwUser
-from backend.models.whale import WwWhaleContact, WwWhiteWhale
+from models.signal import WwCompany, WwSignal, WwSignalConnection, WwSignalDedup
+from models.tenant import WwTenant, WwUser
+from models.whale import WwWhaleContact, WwWhiteWhale
 
 __all__ = [
     "WwTenant",

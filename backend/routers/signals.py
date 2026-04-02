@@ -6,10 +6,10 @@ from pydantic import BaseModel
 from sqlalchemy import select, update, func, desc
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.database import get_db
-from backend.models.signal import WwSignal
-from backend.models.tenant import WwUser
-from backend.routers.auth import get_current_user
+from database import get_db
+from models.signal import WwSignal
+from models.tenant import WwUser
+from routers.auth import get_current_user
 
 router = APIRouter(prefix="/api/signals", tags=["signals"])
 
@@ -108,7 +108,7 @@ async def trigger_signal_run(
     db: AsyncSession = Depends(get_db),
 ):
     """Trigger manual signal engine run."""
-    from backend.services.signal_engine import run_signal_engine
+    from services.signal_engine import run_signal_engine
 
     result = await run_signal_engine(db, user.tenant_id)
     return result
