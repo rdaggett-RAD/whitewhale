@@ -1,7 +1,7 @@
 import httpx
 
-from backend.config import settings
-from backend.database import engine
+from config import settings
+from database import engine
 
 
 async def check_database() -> dict:

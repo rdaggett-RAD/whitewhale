@@ -5,8 +5,8 @@ from sqlalchemy import Boolean, DateTime, ForeignKey, String, Text, text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from backend.database import Base
-from backend.models.base import TimestampMixin, UUIDMixin
+from database import Base
+from models.base import TimestampMixin, UUIDMixin
 
 
 class WwTenant(UUIDMixin, TimestampMixin, Base):

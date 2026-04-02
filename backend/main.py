@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.config import settings
-from backend.routers import auth, admin, signals, whales
+from config import settings
+from routers import auth, admin, signals, whales
 
 app = FastAPI(title="White Whale", version="1.0.0")
 

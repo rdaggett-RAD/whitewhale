@@ -2,8 +2,8 @@ import uuid
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.models.icp import WwIcpConfig, WwServiceCategory, WwSignalRoutingRule
-from backend.models.prompt import (
+from models.icp import WwIcpConfig, WwServiceCategory, WwSignalRoutingRule
+from models.prompt import (
     WwPromptAngle,
     WwPromptConstraint,
     WwPromptPersona,

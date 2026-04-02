@@ -4,8 +4,8 @@ from sqlalchemy import Boolean, ForeignKey, Integer, Text
 from sqlalchemy.dialects.postgresql import ARRAY, UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
-from backend.database import Base
-from backend.models.base import TimestampMixin, UUIDMixin
+from database import Base
+from models.base import TimestampMixin, UUIDMixin
 
 
 class WwIcpConfig(UUIDMixin, TimestampMixin, Base):

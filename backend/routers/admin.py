@@ -5,13 +5,13 @@ from pydantic import BaseModel
 from sqlalchemy import func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.database import get_db
-from backend.models.tenant import WwTenant, WwUser
-from backend.models.signal import WwSignal
-from backend.models.action import WwActionQueue
-from backend.models.delivery import WwSentLog
-from backend.routers.auth import get_current_user
-from backend.services.integrations import check_all_integrations
+from database import get_db
+from models.tenant import WwTenant, WwUser
+from models.signal import WwSignal
+from models.action import WwActionQueue
+from models.delivery import WwSentLog
+from routers.auth import get_current_user
+from services.integrations import check_all_integrations
 
 router = APIRouter(prefix="/api/admin", tags=["admin"])
 
@@ -129,7 +129,7 @@ async def seed_tenant(
     db: AsyncSession = Depends(get_db),
     user: WwUser = Depends(require_admin),
 ):
-    from backend.services.seed import seed_f3_growth
+    from services.seed import seed_f3_growth
 
     result = await db.execute(select(WwTenant).where(WwTenant.id == tenant_id))
     if not result.scalar_one_or_none():

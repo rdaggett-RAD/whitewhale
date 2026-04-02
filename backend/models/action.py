@@ -5,8 +5,8 @@ from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, Text, text
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
-from backend.database import Base
-from backend.models.base import TimestampMixin, UUIDMixin
+from database import Base
+from models.base import TimestampMixin, UUIDMixin
 
 
 class WwActionQueue(UUIDMixin, TimestampMixin, Base):

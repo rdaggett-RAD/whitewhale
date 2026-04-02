@@ -1,7 +1,7 @@
 import asyncio
 
-from backend.workers.celery_app import celery_app
-from backend.database import async_session
+from workers.celery_app import celery_app
+from database import async_session
 
 
 @celery_app.task(name="run_signal_engine")
@@ -12,7 +12,7 @@ def run_signal_engine_task(tenant_id: str):
 
 async def _run(tenant_id: str):
     import uuid
-    from backend.services.signal_engine import run_signal_engine
+    from services.signal_engine import run_signal_engine
 
     async with async_session() as db:
         result = await run_signal_engine(db, uuid.UUID(tenant_id))
@@ -27,8 +27,8 @@ def run_all_tenants_task():
 
 async def _run_all():
     from sqlalchemy import select
-    from backend.models.tenant import WwTenant
-    from backend.services.signal_engine import run_signal_engine
+    from models.tenant import WwTenant
+    from services.signal_engine import run_signal_engine
 
     async with async_session() as db:
         result = await db.execute(

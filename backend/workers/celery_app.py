@@ -1,5 +1,5 @@
 from celery import Celery
-from backend.config import settings
+from config import settings
 
 celery_app = Celery(
     "whitewhale",

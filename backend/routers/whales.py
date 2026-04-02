@@ -6,11 +6,11 @@ from pydantic import BaseModel
 from sqlalchemy import select, update, delete, desc
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.database import get_db
-from backend.models.signal import WwSignal
-from backend.models.tenant import WwUser
-from backend.models.whale import WwWhaleContact, WwWhiteWhale
-from backend.routers.auth import get_current_user
+from database import get_db
+from models.signal import WwSignal
+from models.tenant import WwUser
+from models.whale import WwWhaleContact, WwWhiteWhale
+from routers.auth import get_current_user
 
 router = APIRouter(prefix="/api/whales", tags=["whales"])
 
@@ -264,7 +264,7 @@ async def find_contacts(
     db: AsyncSession = Depends(get_db),
 ):
     """Trigger Apollo contact lookup for this whale."""
-    from backend.services.contact_finder import find_contacts_for_whale
+    from services.contact_finder import find_contacts_for_whale
 
     result = await db.execute(
         select(WwWhiteWhale).where(

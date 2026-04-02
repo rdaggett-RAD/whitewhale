@@ -5,8 +5,8 @@ from sqlalchemy import Boolean, Date, DateTime, ForeignKey, Integer, Text, Uniqu
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
-from backend.database import Base
-from backend.models.base import TimestampMixin, UUIDMixin
+from database import Base
+from models.base import TimestampMixin, UUIDMixin
 
 
 class WwLinkedinAccount(UUIDMixin, TimestampMixin, Base):

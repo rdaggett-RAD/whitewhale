@@ -5,7 +5,7 @@ from sqlalchemy import DateTime, text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
-from backend.database import Base
+from database import Base
 
 
 class UUIDMixin:
